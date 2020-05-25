@@ -51,7 +51,7 @@ def postprocess_hackernews(stories):
 
 
 def main(display='html', num_of_pages=2, min_votes=100):
-    """Collect the articles from multiple HackerNews pages, filter and order them based on the number of votes, and output to a HTML page or to the console."""
+    """Collect the articles from multiple Hacker News pages, filter and order them based on the number of votes, and output to a HTML page or to the console."""
     links, subtext = scrape_multiple_pages(num_of_pages)
     stories = customize_hackernews(links, subtext, min_votes)
     stories = postprocess_hackernews(stories)
