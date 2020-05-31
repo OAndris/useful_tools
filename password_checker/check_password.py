@@ -34,11 +34,10 @@ def pwned_api_check(password):
 
 def main(hide_pw_from_console=True):
     """
-    Reads passwords from "passwords.txt" (separated by newline) and checks whether they have ever been pwned, based on the "https://haveibeenpwned.com/" API.
-    The safety of the passwords is protected in a number of ways:
-    1) Passwords are read from a local file (thus they are not passed to and cannot be saved by the command line)
-    2) Passwords are hashed via SHA1 (thus they are converted by a one-way algorithm and not used directly)
-    3) Only the first 5 characters of the password hash are sent to the API (thus the full hash remains unknown and the password cannot be reverse engineered with brute force)
+    Check if your passwords have ever been hacked (based on the "https://haveibeenpwned.com/" API).
+    Passwords are read from "passwords.txt", separated by newline (thus they are not passed to and cannot be saved by the command line).
+    They are hashed via SHA1 (thus they are converted by a one-way algorithm and not used directly),
+    and only the first 5 characters of the password hash are sent to the API (thus the full hash remains unknown and the password cannot be reverse engineered with brute force).
     """
     # NOTE: typing passwords in the command line is not always secure (they might get saved), so read from file instead of using "sys.argv[1:]"
     with open('passwords.txt', 'r', encoding='utf-8') as file:
