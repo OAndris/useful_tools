@@ -2,7 +2,6 @@
 Idea based on "Complete Python Developer in 2020: Zero to Mastery" from Andrei Neagoie.
 """
 
-
 import json
 import pandas as pd
 import requests
