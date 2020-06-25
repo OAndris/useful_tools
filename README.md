@@ -8,3 +8,4 @@ Passwords are read from "passwords.txt", separated by newline (thus they are not
 They are hashed via SHA1 (thus they are converted by a one-way algorithm and not used directly),
 and only the first 5 characters of the password hash are sent to the API (thus the full hash remains unknown and the password cannot be reverse engineered with brute force).
 - [sms_sending_twilio](https://github.com/OAndris/useful_tools/tree/master/sms_sending_twilio): Send custom SMS to any phone number, using Twilio.
+- [pdf_processing](https://github.com/OAndris/useful_tools/tree/master/pdf_processing): Process PDF files. For example, add watermarks, rotate specific pages, or merge multiple files.
