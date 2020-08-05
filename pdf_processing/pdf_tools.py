@@ -46,8 +46,27 @@ def add_watermark(source_pdf, watermark_pdf, output_pdf):
         output.write(file)
 
 
+def remove_pages(source_pdf, pages_to_delete):
+    """
+    Remove one or more pages (as specified in the input array) from a single PDF file.
+    Any potential bookmarks from the source file will be lost.
+    """
+    source = PyPDF2.PdfFileReader(open(source_pdf, 'rb'))
+    output = PyPDF2.PdfFileWriter()
+    pages_to_delete = [page-1 for page in pages_to_delete]  # start from 0 instead of 1
+    for i in range(source.getNumPages()):
+        if i not in pages_to_delete:
+            output.addPage(source.getPage(i))
+    with open(f'cleaned_{source_pdf}', 'wb') as f:
+        output.write(f)
+
+
+
+
+
 if __name__ == "__main__":
     ### SAMPLE USAGE ###
-    rotate_specific_pages(source_pdf='dummy.pdf', output_pdf='rotated.pdf', pages=(1,), clockwise_degree=90)
+    # rotate_specific_pages(source_pdf='dummy.pdf', output_pdf='rotated.pdf', pages=(1,), clockwise_degree=90)
     # merge(['dummy.pdf', 'rotated.pdf'], output_pdf='merged.pdf')
     # add_watermark(source_pdf='merged.pdf', watermark_pdf='watermark.pdf', output_pdf='watermarked.pdf')
+    remove_pages(source_pdf='merged.pdf', pages_to_delete=[1])
