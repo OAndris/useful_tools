@@ -61,6 +61,16 @@ def remove_pages(source_pdf, pages_to_delete):
         output.write(f)
 
 
+def find_files_with_extension(ext):
+    """
+    Helper function to get a list of files present in the current directory with the desired file extension.
+    Example: 
+    pdfs = find_files_with_extension('.pdf')
+    """
+    from glob import glob
+    return glob("*.pdf")
+
+
 
 
 
