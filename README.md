@@ -4,6 +4,7 @@ A curated list of useful tools (mini-projects).
 
 **Projects**:
 
+-   [email_sending](https://github.com/OAndris/useful_tools/tree/master/email_sending): Send HTML formatted e-mails.
 -   [image_processing](https://github.com/OAndris/useful_tools/tree/master/image_processing): Process images, such as convert a folder of JPG images to PNG and save them to a new folder.
 -   [password_checker](https://github.com/OAndris/useful_tools/tree/master/password_checker): Check if your passwords have ever been hacked (based on the "https://haveibeenpwned.com/" API).
     Passwords are read from "passwords.txt", separated by newline (thus they are not passed to and cannot be saved by the command line).
